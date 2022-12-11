@@ -1,0 +1,82 @@
+<div class="container">
+    <div>
+        <h1>Egreso</h1>
+    </div>
+    <form [formGroup]="egreso">
+        <!-- INPUT PARA Descripcion-->
+        <div class="form-group">    
+            <div>
+                <label>Descripcion</label>
+                <!-- INPUT para el campo nombre-->
+                <input
+                    type="text"
+                    placeholder="Ingresa Valor descripcion"
+                    formControlName ="descripcion"
+                    required
+                >
+                <!-- Mostrar el error para el campo nombre-->
+                <small *ngIf=" egresoReactivo.descripcion?.errors?.required && egresoReactivo.descripcion.touched ">
+                    La descripcion es necesaria
+                </small>
+            </div>
+        </div>
+        <!-- FIN INPUT PARA DESCRIPCION-->
+
+        <!-- INPUT PARA PRECIO-->
+        <div class="form-group">
+            <div>
+                <label>Precio</label>
+                <!-- INPUT para el campo apellido-->
+                <input
+                    type="number"
+                    placeholder="Ingresa el Precio"
+                    formControlName ="precio"
+                    required
+                >
+                <!-- Mostrar el error para el campo precio-->
+                <small *ngIf=" egresoReactivo.precio?.errors?.required && egresoReactivo.precio.touched ">
+                    Ingrese el precio correcto
+                </small>
+            </div>
+        </div>
+        <!-- FIN INPUT PARA PRECIO-->
+        <div class="form-group">
+            <div>
+                <label>id_usuario</label>
+                <!-- INPUT para el campo id_usuario-->
+                <input
+                    type="text"
+                    placeholder="Ingresa el id_usuario"
+                    formControlName ="id_usuario"
+                    required
+                >
+                <!-- Mostrar el error para el campo id_usuario-->
+                <small *ngIf=" egresoReactivo.id_usuario?.errors?.required && egresoReactivo.id_usuario.touched ">
+                    El id_usuario es requerido
+                </small>
+                 <!-- FIN INPUT PARA id_usuario-->
+            </div>
+        </div>
+
+        <!-- BOTÓN-->
+        <div class="form-group">
+            <div>
+                <button 
+                class="btn btn-primary" 
+                type="submit"
+                (click)="botonEnviar()"
+                [disabled]="!egreso.valid"
+                >Enviar</button>
+            </div>
+        </div>
+        <!-- FIN BOTÓN-->
+        
+    
+    </form>
+    
+
+    
+
+</div>
+
+

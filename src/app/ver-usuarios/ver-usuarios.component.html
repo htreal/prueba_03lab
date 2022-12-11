@@ -1,0 +1,27 @@
+<button (click)="obtenerUsuario()"  >Obtener Usuarios</button>
+<table class="table">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th scope="col">Nombre</th>
+        <th scope="col">Apellido</th>
+        <th scope="col">Rut</th>
+        <th scope="col">Correo</th>
+        <th scope="col">Password</th>
+        <th>Accion</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let dato of usuario">
+        <td>{{dato._id}}</td>
+        <td>{{dato.nombre}}</td>
+        <td>{{dato.apellido}}</td>
+        <td>{{dato.rut}}</td>
+        <td>{{dato.correo}}</td>
+        <td>{{dato.password}}</td>
+        <td><button (click)="eliminar(dato._id)">Eliminar</button></td>
+      </tr>
+      
+      
+    </tbody>
+  </table>

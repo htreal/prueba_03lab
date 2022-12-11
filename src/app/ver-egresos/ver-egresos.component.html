@@ -1,0 +1,30 @@
+<button (click)="obtenerEgreso()"  >Obtener Egresos</button>
+<table class="table">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th scope="col">Descripcion</th>
+            <th scope="col">Precio</th>
+            <th scope="col">id_usuario</th>
+            <th>Accion</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let dato of egresos">
+            <td>{{dato._id}}</td>
+            <td>{{dato.descripcion}}</td>
+            <td>{{dato.precio}}</td>
+            <td>{{dato.id_usuario</td>
+            <td><button (click)="eliminar(dato._id)">Eliminar</button></td>
+          </tr>
+          
+          
+        </tbody>
+      </table>
+
+
+
+
+
+
+
